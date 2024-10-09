@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
 
@@ -79,5 +79,6 @@
     ./ergonomics.nix
     ./cli.nix
     ./gui.nix
+    ./services.nix
   ];
 }

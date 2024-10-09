@@ -10,16 +10,26 @@
     };
     nixgl = { url = "github:nix-community/nixGL"; };
     stylix = { url = "github:danth/stylix"; };
+    passveil = {
+      url = "github:doma-engineering/passveil";
+      # Ensure passveil uses the same nixpkgs
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, nixgl, stylix, ... }:
+  outputs = { nixpkgs, home-manager, nixgl, stylix, passveil, ... }:
     {
       homeConfigurations."sweater" = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
           system = "x86_64-linux";
           config.allowUnfree = true;
           config.allowUnfreePredicate = (_: true);
-          overlays = [ nixgl.overlay ];
+          overlays = [ 
+	    nixgl.overlay
+	    (final: prev: {
+	      passveil = passveil.packages.${final.system}.default;
+	    })
+          ];
         };
 
         # Specify your home configuration modules here, for example,

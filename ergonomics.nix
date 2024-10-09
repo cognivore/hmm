@@ -128,7 +128,7 @@ in
     enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;
-    syntaxHighlighting = {enable = true;};
+    syntaxHighlighting = {enable = false;};
     oh-my-zsh = {
       enable = true;
       plugins = ["docker-compose" "docker" "git" "tmux" "fzf"];
