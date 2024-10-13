@@ -8,5 +8,6 @@
     pkgs.passveil
     pkgs.gnupg
     pkgs.pinentry-curses
+    pkgs.shmux
   ];
 }

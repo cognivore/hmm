@@ -289,6 +289,21 @@
     },
     "nixpkgs_3": {
       "locked": {
+        "lastModified": 1728831343,
+        "narHash": "sha256-dmR6WbEnvMvxiDTw4ggyzWRyElPdCk4Czq+uZB2luYs=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "5c3f89dcd7c47ae9eb38889543478c188227f488",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_4": {
+      "locked": {
         "lastModified": 1725194671,
         "narHash": "sha256-tLGCFEFTB5TaOKkpfw3iYT9dnk4awTP/q4w+ROpMfuw=",
         "owner": "NixOS",
@@ -331,7 +346,26 @@
         "nixgl": "nixgl",
         "nixpkgs": "nixpkgs_2",
         "passveil": "passveil",
+        "shmux": "shmux",
         "stylix": "stylix"
+      }
+    },
+    "shmux": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_3"
+      },
+      "locked": {
+        "lastModified": 1728831997,
+        "narHash": "sha256-S0H22R4XxrxLdgKkLCQzdC5PSoeXq9JB0LmpKXWYve4=",
+        "owner": "doma-engineering",
+        "repo": "shmux",
+        "rev": "f342f0949e5c65a41c2f2caca371a1009f764ee8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "doma-engineering",
+        "repo": "shmux",
+        "type": "github"
       }
     },
     "stylix": {
@@ -344,7 +378,7 @@
         "flake-utils": "flake-utils_2",
         "gnome-shell": "gnome-shell",
         "home-manager": "home-manager_2",
-        "nixpkgs": "nixpkgs_3",
+        "nixpkgs": "nixpkgs_4",
         "systems": "systems",
         "tinted-foot": "tinted-foot",
         "tinted-kitty": "tinted-kitty",

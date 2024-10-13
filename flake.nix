@@ -15,9 +15,10 @@
       # Ensure passveil uses the same nixpkgs
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    shmux = { url = "github:doma-engineering/shmux"; };
   };
 
-  outputs = { nixpkgs, home-manager, nixgl, stylix, passveil, ... }:
+  outputs = { nixpkgs, home-manager, nixgl, stylix, passveil, shmux, ... }:
     {
       homeConfigurations."sweater" = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
@@ -28,6 +29,7 @@
 	    nixgl.overlay
 	    (final: prev: {
 	      passveil = passveil.packages.${final.system}.default;
+	      shmux = shmux.packages.${final.system}.default;
 	    })
           ];
         };
