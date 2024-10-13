@@ -18,8 +18,10 @@ in
     '';
   };
 
-  programs.alacritty.enable = true;
-  programs.alacritty.package = alacrittyW;
+  programs.alacritty = {
+    enable = true;
+    package = alacrittyW;
+  };
 
   home.packages = [
     gimpW

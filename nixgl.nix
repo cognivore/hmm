@@ -1,4 +1,4 @@
-{  pkgs, lib, config, ... }:
+{  pkgs, lib, ... }:
 let
 
   # Broken! https://github.com/nix-community/nixGL/issues/170

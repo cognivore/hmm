@@ -39,6 +39,7 @@
     }
     local lsp = require('lsp-zero')
     local cmp = require('cmp')                         
+    local cmp_select = { behavior = cmp.SelectBehavior.Select }
     local cmp_action = require('lsp-zero').cmp_action()
 
     local cmp_mappings = cmp.mapping.preset.insert({
