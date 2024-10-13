@@ -16,6 +16,8 @@
       nvim-treesitter
       lsp-format-nvim
       nvim-cmp
+      nvim-lspconfig
+      cmp-nvim-lsp
       luasnip
     ];
     extraConfig = ''
@@ -34,11 +36,9 @@
     let g:vimshell_force_overwrite_statusline = 1
     '';
     extraLuaConfig = ''
-    require('lazy-lsp').setup {
-      prefer_local = true,
-    }
+
     local lsp = require('lsp-zero')
-    local cmp = require('cmp')                         
+    local cmp = require('cmp')
     local cmp_select = { behavior = cmp.SelectBehavior.Select }
     local cmp_action = require('lsp-zero').cmp_action()
 
@@ -55,19 +55,20 @@
     cmp_mappings['<Tab>'] = nil
     cmp_mappings['<S-Tab>'] = nil
 
-    cmp.setup({                                        
-      window = {                                       
-        completion = cmp.config.window.bordered(),     
-        documentation = cmp.config.window.bordered(),  
-      },                                               
+    cmp.setup({
+      window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+      },
       mapping = cmp_mappings,
-      snippet = {                                      
-        expand = function(args)                        
-          require('luasnip').lsp_expand(args.body)     
-        end,                                           
-      },                                               
+      snippet = {
+        expand = function(args)
+          require('luasnip').lsp_expand(args.body)
+        end,
+      },
       sources = {
         { name = 'nvim_lsp' },
+        { name = 'luasnip' },
       },
     })
 
@@ -85,7 +86,12 @@
       vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
       vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
     end)
+
     lsp.setup()
+
+    require('lazy-lsp').setup {
+      prefer_local = true,
+    }
     '';
   };
 }
