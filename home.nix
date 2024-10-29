@@ -37,48 +37,9 @@
     nix-direnv.enable = true;
   };
 
-  stylix = {
-    enable = true;
-    image = ./wallpaper.png;
-    fonts = {
-      emoji =  {
-        package = pkgs.noto-fonts-emoji;
-        name = "Noto Color Emoji";
-      };
-      monospace = {
-        package = pkgs.nerdfonts;
-        name = "CaskaydiaCove NFM";
-      };
-      serif = {
-        package = pkgs.dejavu_fonts;
-        name = "DejaVu Serif";
-      };
-      sansSerif = {
-        package = pkgs.dejavu_fonts;
-        name = "DejaVu Sans";
-      };
-    };
-    polarity = "dark";
-    targets = {
-      i3.enable = true;
-      gtk.enable = true;
-      rofi.enable = true;
-      xresources.enable = true;
-      kitty = {
-        enable = true;
-        variant256Colors = true;
-      };
-    };
-  };
-
   imports = [
-    ./glpkgs.nix
-    ./music.nix
-    ./rofi.nix
-    ./neovim.nix
     ./ergonomics.nix
     ./cli.nix
-    ./gui.nix
     ./services.nix
   ];
 }
