@@ -26,6 +26,8 @@ in
       PS1="\[\033]2;\h:\u:\w\007\]$PS1"
     fi
   fi
+
+  set -o vi
   '';
 
   programs.fzf = {
@@ -100,8 +102,6 @@ in
 
   programs.starship.settings = {
     # See docs here: https://starship.rs/config/
-    # Symbols config configured ./starship-symbols.nix.
-
     # TODO: Move symbols to another file
     directory.read_only = mkDefault " ";
     directory.fish_style_pwd_dir_length = 1; # turn on fish directory truncation

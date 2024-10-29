@@ -9,5 +9,6 @@
     pkgs.gnupg
     pkgs.pinentry-curses
     pkgs.shmux
+    pkgs.parallel
   ];
 }
