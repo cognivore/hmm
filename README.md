@@ -17,3 +17,20 @@ Run `home-manager switch`.
 Enjoy!
 
 Don't forget to fork this repo and push your home-manager configuration into your fork.
+
+# Lsp / VSCode
+
+Enable nixd + nixfmt like so:
+
+```json
+    "nix.enableLanguageServer": true,
+    "nix.formatterPath": "nixfmt",
+    "nix.serverPath": "nixd",
+    "nix.serverSettings": {"nixd": {
+        "formatting": {
+            "command": [
+                "nixfmt"
+            ]
+        }
+    }
+```
