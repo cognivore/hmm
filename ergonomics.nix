@@ -6,6 +6,7 @@ in
   home.packages = [
     pkgs.fd
     pkgs.autocutsel
+    pkgs.xorg.xinput
   ];
 
   # We use dumber bash for `mc` prompt not to glith due to starship
