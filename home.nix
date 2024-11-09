@@ -80,5 +80,6 @@
     ./cli.nix
     ./gui.nix
     ./services.nix
+    ./lsp.nix
   ];
 }
